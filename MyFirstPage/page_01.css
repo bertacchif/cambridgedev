@@ -1,0 +1,33 @@
+.yellowt {
+    background: yellow;
+    display: inline;
+}
+
+#page {
+    width: 70%;
+}
+
+.box {
+    padding: 0.6rem;
+    margin-bottom: 0.6rem;
+}
+
+.bordered {
+    border: 1px dotted blue;
+}
+
+.colored {
+    background: #483d8b;
+    color: white;
+}
+
+.block {
+    background: gray;
+    display: inline-block; 
+    border-radius: 5px;
+    border-color: rgb(158, 158, 158);
+}
+
+#very-important {
+    color: red;
+}
