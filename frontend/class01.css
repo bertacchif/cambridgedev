@@ -1,0 +1,28 @@
+#page {
+    margin: 2;
+    max-width: 30rem;
+}
+
+.highlight {
+    background-color: yellow;
+}
+
+.box {
+    padding: 1rem;
+    margin-bottom: 20px;
+}
+
+.dotted {
+    border: 1px dashed darkslateblue;
+    color: darkslateblue;
+} 
+
+.purple {
+    background-color: darkslateblue;
+    color: white;
+}
+
+.gray {
+    display: inline-block;
+    background-color: rgba(71, 61, 139, 0.3);
+}
