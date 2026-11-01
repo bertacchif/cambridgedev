@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2: Beacon Switch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="panel">
+        <!-- The four screws holding the panel to the wall of the ship -->
+        <span class="screw top-left"></span>
+        <span class="screw top-right"></span>
+        <span class="screw bottom-left"></span>
+        <span class="screw bottom-right"></span>
+
+        <h1>Emergency Panel</h1>
+
+        <div class="screen">
+            <p>SHIP STATUS: CRASHED</p>
+            <p>MAIN POWER: OFFLINE</p>
+            <p>BEACON: <span id="light-status"></span><span class="cursor">_</span></p>
+        </div>
+
+        <!-- JavaScript adds and removes the class "on" to make this blink -->
+        <div id="light" class="light"></div>
+
+        <!-- The switch is really a checkbox: CSS makes it look like a switch.
+             "checked" means it starts switched on. -->
+        <label class="switch">
+            <input id="light-switch" type="checkbox" checked>
+            <span class="track"></span>
+            <span>Beacon switch</span>
+        </label>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
