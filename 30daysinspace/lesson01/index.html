@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1: Emergency Light</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="panel">
+        <!-- The four screws holding the panel to the wall of the ship -->
+        <span class="screw top-left"></span>
+        <span class="screw top-right"></span>
+        <span class="screw bottom-left"></span>
+        <span class="screw bottom-right"></span>
+
+        <h1>Emergency Panel</h1>
+
+        <div class="screen">
+            <p>SHIP STATUS: CRASHED</p>
+            <p>MAIN POWER: OFFLINE</p>
+            <p>BEACON: ACTIVE<span class="cursor">_</span></p>
+        </div>
+
+        <!-- JavaScript adds and removes the class "on" to make this blink -->
+        <div id="light" class="light"></div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
