@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3: Ship Systems</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="panel">
+        <!-- The four screws holding the panel to the wall of the ship -->
+        <span class="screw top-left"></span>
+        <span class="screw top-right"></span>
+        <span class="screw bottom-left"></span>
+        <span class="screw bottom-right"></span>
+
+        <h1>Ship Systems</h1>
+
+        <div class="screen">
+            <p>SHIP STATUS: CRASHED</p>
+            <p>GREEN LAB: <span id="lab-status">OFF</span></p>
+            <p>CABIN LIGHTS: <span id="cabin-status">OFF</span></p>
+            <p>EXTERIOR LIGHTS: <span id="exterior-status">OFF</span><span class="cursor">_</span></p>
+        </div>
+
+        <!-- JavaScript listens here, once, for all three switches.
+             autocomplete="off" makes every switch start off when the page reloads. -->
+        <div id="systems" class="systems">
+            <label class="system">
+                <span id="lab-light" class="light green"></span>
+                <span class="system-name">
+                    Green Lab
+                    <small>Photosynthesis + O2</small>
+                </span>
+                <input id="lab-switch" type="checkbox" autocomplete="off">
+                <span class="track"></span>
+            </label>
+
+            <label class="system">
+                <span id="cabin-light" class="light white"></span>
+                <span class="system-name">
+                    Cabin Lights
+                    <small>Inside the ship</small>
+                </span>
+                <input id="cabin-switch" type="checkbox" autocomplete="off">
+                <span class="track"></span>
+            </label>
+
+            <label class="system">
+                <span id="exterior-light" class="light amber"></span>
+                <span class="system-name">
+                    Exterior Lights
+                    <small>Outside the hull</small>
+                </span>
+                <input id="exterior-switch" type="checkbox" autocomplete="off">
+                <span class="track"></span>
+            </label>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
