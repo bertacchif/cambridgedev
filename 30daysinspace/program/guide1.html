@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1 | 30 Days Lost in Space</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a class="logo" href="index.html">30 Days Lost in Space</a>
+            <nav class="site-nav" aria-label="Main">
+                <a href="index.html">Home</a>
+                <a href="resources.html">Resources</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <p class="eyebrow">30 Days Lost in Space</p>
+            <h1>Day 1</h1>
+        </div>
+    </section>
+
+    <div class="container guide">
+        <!-- Index of the page: each link jumps to the element with that id -->
+        <nav class="toc" aria-label="On this page">
+            <p class="toc-title">On this page</p>
+            <ol>
+                <li><a href="#maria-message">MARIA's message</a></li>
+                <li><a href="#today">What we will do today</a></li>
+                <li><a href="#step-1">Step 1: Create the files</a></li>
+                <li>
+                    <a href="#step-2">Step 2: Build the panel with HTML</a>
+                    <ol>
+                        <li><a href="#step-2-1">2.1 Start from the boilerplate</a></li>
+                        <li><a href="#step-2-2">2.2 Add the panel</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#step-3">Step 3: Style it with CSS</a>
+                    <ol>
+                        <li><a href="#step-3-1">3.1 Name the colours</a></li>
+                        <li><a href="#your-turn">Your turn</a></li>
+                        <li><a href="#step-3-2">3.2 Deep space</a></li>
+                        <li><a href="#step-3-3">3.3 The metal panel</a></li>
+                        <li><a href="#step-3-4">3.4 The screws</a></li>
+                        <li><a href="#step-3-5">3.5 The status screen</a></li>
+                        <li><a href="#step-3-6">3.6 The alarm light</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#step-4">Step 4: Make it blink with JavaScript</a>
+                    <ol>
+                        <li><a href="#timers">How timers work</a></li>
+                    </ol>
+                </li>
+                <li><a href="#try-it">Try it yourself</a></li>
+                <li><a href="#full-code">The full code</a></li>
+                <li>
+                    <a href="#learning-method">Learning Method (Optional)</a>
+                    <ol>
+                        <li><a href="#notes-session">1. What we did today</a></li>
+                        <li><a href="#notes-cheatsheet">2. Your cheatsheet</a></li>
+                        <li><a href="#notes-mistakes">3. Your mistakes</a></li>
+                    </ol>
+                </li>
+            </ol>
+        </nav>
+
+    <main class="content">
+        <!-- The story: just for fun, you don't need it to solve the exercise -->
+        <blockquote class="story" id="maria-message">
+            <p>
+                Commander, can you hear me? This is MARIA, your ship's onboard assistant.
+                Please stay calm.
+            </p>
+            <p>
+                We crashed into the ocean of an unknown planet and the ship has sunk.
+                We are resting on the seabed, deep under the surface. The hull is holding, for now.
+            </p>
+            <p>
+                Most of our systems are failing. I can still think, but the crash corrupted
+                my repair routines, so I can't fix anything by myself. You will have to write
+                the code. I will guide you, one system at a time.
+            </p>
+            <p>
+                Our first problem is right in front of you: the alarm. That red light has been
+                blinking since we hit the water, and I can barely hear myself think.
+                Let's shut it off.
+            </p>
+        </blockquote>
+
+        <section class="lesson" id="today">
+            <h2>What we will do today</h2>
+            <p>
+                In this class we will use HTML, CSS and JavaScript to recreate the
+                ship's control panel with the alarm light on it. We will build the
+                panel with HTML, style it with CSS, and then use JavaScript to make
+                the light blink periodically.
+            </p>
+
+            <figure class="screenshot">
+                <img src="images/day1-panel.png" alt="A metal emergency panel on a starry background, with a green status screen and a big red light that is switched on">
+                <figcaption>The emergency panel we are going to build. The red light blinks on and off.</figcaption>
+            </figure>
+        </section>
+
+        <!-- ================= STEP 1 ================= -->
+        <section class="lesson" id="step-1">
+            <h2>Step 1: Create the files</h2>
+            <p>
+                Create a new folder called <code>lesson01</code>. Inside it, create three empty files:
+            </p>
+            <ul>
+                <li><code>index.html</code>: what is on the page (the panel, the screen, the light).</li>
+                <li><code>style.css</code>: how it looks (colours, sizes, shapes).</li>
+                <li><code>script.js</code>: what it does (making the light blink).</li>
+            </ul>
+            <p>
+                Keeping these three apart is how most websites are built: one file for each job.
+            </p>
+        </section>
+
+        <!-- ================= STEP 2 ================= -->
+        <section class="lesson" id="step-2">
+            <h2>Step 2: Build the panel with HTML</h2>
+            <h3 id="step-2-1">2.1 Start from the boilerplate</h3>
+            <p>
+                Every HTML page starts with the same basic structure, called a
+                <em>boilerplate</em>. Open <code>index.html</code> and write:
+            </p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Lesson 1: Emergency Light&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <ul>
+                <li><code>&lt;!DOCTYPE html&gt;</code> tells the browser this is a modern HTML page.</li>
+                <li><code>&lt;html lang="en"&gt;</code> wraps the whole page and says it is in English.</li>
+                <li>
+                    <code>&lt;head&gt;</code> holds information <em>about</em> the page, which is not
+                    shown inside it: the character set (<code>UTF-8</code> supports every letter and
+                    emoji), the <code>viewport</code> line that makes the page fit phone screens, and
+                    the <code>&lt;title&gt;</code> shown on the browser tab.
+                </li>
+                <li><code>&lt;body&gt;</code> holds everything you see on the page. It is empty for now.</li>
+            </ul>
+            <p>
+                Open <code>index.html</code> in your browser: the page is blank, but the tab shows
+                "Lesson 1: Emergency Light".
+            </p>
+
+            <h3 id="step-2-2">2.2 Add the panel</h3>
+            <p>
+                Now we fill in the page. We add two lines that connect our other files: a
+                <code>&lt;link&gt;</code> in the head for the CSS, and a <code>&lt;script&gt;</code>
+                at the end of the body for the JavaScript. Then, inside the body, we build the panel.
+                Read the comments: they explain what each piece is.
+            </p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Lesson 1: Emergency Light&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;main class="panel"&gt;
+        &lt;!-- The four screws holding the panel to the wall of the ship --&gt;
+        &lt;span class="screw top-left"&gt;&lt;/span&gt;
+        &lt;span class="screw top-right"&gt;&lt;/span&gt;
+        &lt;span class="screw bottom-left"&gt;&lt;/span&gt;
+        &lt;span class="screw bottom-right"&gt;&lt;/span&gt;
+
+        &lt;h1&gt;Emergency Panel&lt;/h1&gt;
+
+        &lt;div class="screen"&gt;
+            &lt;p&gt;SHIP STATUS: CRASHED&lt;/p&gt;
+            &lt;p&gt;MAIN POWER: OFFLINE&lt;/p&gt;
+            &lt;p&gt;BEACON: ACTIVE&lt;span class="cursor"&gt;_&lt;/span&gt;&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;!-- JavaScript adds and removes the class "on" to make this blink --&gt;
+        &lt;div id="light" class="light"&gt;&lt;/div&gt;
+    &lt;/main&gt;
+
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <p>A few things to notice:</p>
+            <ul>
+                <li>
+                    <code>&lt;link rel="stylesheet" href="style.css"&gt;</code> connects the CSS file,
+                    and <code>&lt;script src="script.js"&gt;</code> connects the JavaScript file.
+                </li>
+                <li>
+                    The <code>class</code> attributes (<code>panel</code>, <code>screw</code>,
+                    <code>screen</code>, <code>light</code>) are names we will use in the CSS to style each part.
+                </li>
+                <li>
+                    The light also has an <code>id</code>. An id is unique on the page, so JavaScript
+                    can use it to find exactly that element.
+                </li>
+                <li>
+                    The <code>&lt;script&gt;</code> tag is at the end of the body, so the light
+                    already exists when the JavaScript runs.
+                </li>
+            </ul>
+            <p>
+                Open <code>index.html</code> in your browser now. You will see plain text and
+                not much else: the page has content but no style yet.
+            </p>
+        </section>
+
+        <!-- ================= STEP 3 ================= -->
+        <section class="lesson" id="step-3">
+            <h2>Step 3: Style it with CSS</h2>
+            <p>
+                Now open <code>style.css</code>. We will write it in small pieces. After each
+                piece, save and refresh the browser to see what changed.
+            </p>
+
+            <h3 id="step-3-1">3.1 Name the colours</h3>
+            <p>
+                Colours we use more than once get a name, called a <em>CSS variable</em>. We can
+                then write <code>var(--metal)</code> instead of repeating <code>#39425f</code> everywhere.
+            </p>
+<pre><code>/* Colours we use more than once get a name */
+:root {
+    --space: #0b1026;
+    --metal: #39425f;
+    --metal-dark: #252c45;
+    --text: #c9d4f2;
+    --screen-green: #5dffb0;
+    --light-off: #4a1018;
+    --light-on: #ff2d3f;
+}
+
+* {
+    box-sizing: border-box;
+}</code></pre>
+            <p>
+                <strong>What is <code>:root</code>?</strong> It selects the very top element of the
+                page, the <code>&lt;html&gt;</code> tag. Everything else on the page is inside it, and
+                CSS variables are passed down from an element to everything inside it. So variables
+                defined on <code>:root</code> can be used anywhere in our CSS. Variable names always
+                start with two dashes, like <code>--metal</code>.
+            </p>
+            <p>
+                <strong>Why <code>* { box-sizing: border-box; }</code>?</strong> The <code>*</code>
+                selector means "every element on the page". By default, when you give an element a
+                <code>width</code>, the browser adds the padding and the border <em>on top</em> of it.
+                For example, a box with this CSS:
+            </p>
+<pre><code>width: 340px;
+padding: 32px;
+border: 4px solid;</code></pre>
+            <p>
+                would actually be 340 + 32 + 32 + 4 + 4 = <strong>412 pixels</strong> wide. That is
+                confusing, and it often makes boxes overflow the screen. With
+                <code>box-sizing: border-box</code>, the padding and border are counted
+                <em>inside</em> the width, so the box is exactly 340 pixels wide, as we wrote.
+                Almost every website starts its CSS with this rule.
+            </p>
+            <p>
+                <strong>How do we use a variable?</strong> Write <code>var()</code> with the
+                variable's name inside, anywhere you would normally write the value:
+            </p>
+<pre><code>:root {
+    --metal: #39425f;
+}
+
+.panel {
+    background-color: var(--metal); /* the same as writing #39425f */
+}
+
+.screw {
+    border: 2px solid var(--metal); /* works inside longer values too */
+}</code></pre>
+            <p>
+                If we later want a different metal colour, we change it once in
+                <code>:root</code> and every place that uses <code>var(--metal)</code> updates.
+            </p>
+
+            <!-- An exercise for the students before they read the solution -->
+            <div class="action" id="your-turn">
+                <p class="action-label">Your turn</p>
+                <p>
+                    Before reading on, try to write the rest of the CSS yourself and get as close
+                    as you can to the image below. Use the colour variables from 3.1.
+                </p>
+                <img src="images/day1-panel.png" alt="The emergency panel you should try to recreate">
+                <p>Some parts to work on:</p>
+                <ul>
+                    <li>a dark blue page with the panel in the middle</li>
+                    <li>a grey metal panel with rounded corners and a shadow</li>
+                    <li>a screw in each corner</li>
+                    <li>a dark screen with green text</li>
+                    <li>a big round red light</li>
+                </ul>
+                <p>
+                    It doesn't need to be perfect. When you are done, or if you get stuck, continue
+                    with the next steps and compare your solution with ours.
+                </p>
+            </div>
+
+            <h3 id="step-3-2">3.2 Deep space</h3>
+            <p>
+                The body becomes a dark blue sky with a few stars. <code>display: flex</code> with
+                <code>justify-content</code> and <code>align-items</code> puts the panel in the
+                middle of the screen.
+            </p>
+<pre><code>/* The page: deep space with a few stars, and the panel in the middle */
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Courier New", monospace;
+    color: var(--text);
+    background-color: var(--space);
+    background-image:
+        radial-gradient(circle at 15% 25%, white 1px, transparent 2px),
+        radial-gradient(circle at 80% 15%, white 1px, transparent 2px),
+        radial-gradient(circle at 65% 70%, white 1px, transparent 2px),
+        radial-gradient(circle at 30% 85%, white 1px, transparent 2px),
+        radial-gradient(circle at 90% 60%, white 1px, transparent 2px);
+}</code></pre>
+            <p>
+                <strong>Why is it called <code>background-image</code> if there are no images?</strong>
+                <code>background-image</code> can show a picture file, like
+                <code>url("stars.png")</code>. But in CSS a gradient also counts as an image: it is a
+                picture that the browser paints by itself, without downloading any file. So it goes
+                in <code>background-image</code>, not in <code>background-color</code>.
+            </p>
+            <p>
+                We can also give <code>background-image</code> several images separated by commas.
+                They are stacked on top of each other, and here each one paints one star.
+                Let's read the first one:
+            </p>
+<pre><code>radial-gradient(circle at 15% 25%, white 1px, transparent 2px)</code></pre>
+            <ul>
+                <li><code>circle at 15% 25%</code>: the centre is 15% from the left and 25% from the top of the page.</li>
+                <li><code>white 1px</code>: it is white for the first pixel from the centre.</li>
+                <li><code>transparent 2px</code>: by 2 pixels it fades to transparent, so the dark sky shows through.</li>
+            </ul>
+            <p>
+                The result is a tiny white dot: a star. The <code>background-color</code> is painted
+                underneath all the images, which is why the rest of the sky is dark blue.
+            </p>
+            <p>
+                <strong>Making your own gradients.</strong> A gradient is a smooth change from
+                one colour to another. There are two main kinds:
+            </p>
+<pre><code>/* In a straight line: red at the top, fading to blue at the bottom */
+background-image: linear-gradient(red, blue);
+
+/* You can pick the direction, and use more than two colours */
+background-image: linear-gradient(to right, red, yellow, green);
+
+/* From the centre outwards, in a circle: white in the middle, black at the edges */
+background-image: radial-gradient(circle, white, black);</code></pre>
+            <p>
+                Try them on the body to see what they do, then put the stars back.
+                The blue band at the top of this page is a <code>linear-gradient</code> too!
+            </p>
+
+            <h3 id="step-3-3">3.3 The metal panel</h3>
+            <p>
+                The panel is a rounded grey box with a shadow. <code>flex-direction: column</code>
+                stacks the title, screen and light one under the other, with <code>gap</code>
+                space between them.
+            </p>
+<pre><code>/* The metal electric panel */
+.panel {
+    position: relative; /* the screws are positioned inside this box */
+    width: 100%;
+    max-width: 340px;
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    background-color: var(--metal);
+    border: 4px solid var(--metal-dark);
+    border-radius: 24px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}</code></pre>
+            <p>
+                Shadows are easier to get right by eye than by guessing numbers. Try this
+                <a href="https://html-css-js.com/css/generator/box-shadow/" target="_blank" rel="noopener">box-shadow generator</a>:
+                move the sliders until you like the shadow, then copy the CSS it gives you.
+            </p>
+
+            <h3 id="step-3-4">3.4 The screws</h3>
+            <p>
+                Each screw is a small circle (<code>border-radius: 50%</code> turns a square
+                into a circle). <code>position: absolute</code> lets us place it exactly in a
+                corner of the panel, 12 pixels from the edges.
+            </p>
+<pre><code>/* A small round screw in each corner */
+.screw {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: var(--text);
+    border: 2px solid var(--metal-dark);
+    border-radius: 50%;
+}
+
+.top-left     { top: 12px;    left: 12px; }
+.top-right    { top: 12px;    right: 12px; }
+.bottom-left  { bottom: 12px; left: 12px; }
+.bottom-right { bottom: 12px; right: 12px; }</code></pre>
+
+            <h3 id="step-3-5">3.5 The status screen</h3>
+            <p>
+                A dark box with green text, like an old computer terminal. The cursor blinks
+                using a CSS <code>animation</code>: halfway through every second it becomes invisible.
+            </p>
+            <p class="note">
+                The blinking cursor is optional. Animations are a bit advanced for now, so if
+                the <code>.cursor</code> and <code>@keyframes</code> part looks confusing, feel
+                free to copy it or skip it. Your panel works fine without it.
+            </p>
+<pre><code>/* The little green status display */
+.screen {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    color: var(--screen-green);
+    background-color: #06140f;
+    border: 2px solid var(--metal-dark);
+    border-radius: 10px;
+}
+
+.screen p {
+    margin: 4px 0;
+}
+
+.cursor {
+    animation: cursor-blink 1s step-end infinite;
+}
+
+@keyframes cursor-blink {
+    50% { opacity: 0; }
+}</code></pre>
+
+            <h3 id="step-3-6">3.6 The alarm light</h3>
+            <p>
+                The light has two looks. By default it is a dark red circle: switched off.
+                When it also has the class <code>on</code>, it turns bright red and glows,
+                thanks to <code>box-shadow</code>.
+            </p>
+<pre><code>/* The light, switched off */
+.light {
+    width: 110px;
+    height: 110px;
+    background-color: var(--light-off);
+    border: 8px solid var(--metal-dark);
+    border-radius: 50%;
+}
+
+/* The light, switched on: JavaScript adds this class to the element above */
+.light.on {
+    background-color: var(--light-on);
+    box-shadow: 0 0 36px 10px var(--light-on);
+}</code></pre>
+            <p>
+                Refresh the page: the panel is complete, but the light is off. Want to see it on?
+                In <code>index.html</code>, change <code>class="light"</code> to
+                <code>class="light on"</code> and refresh. Then change it back: from now on,
+                JavaScript will do this for us.
+            </p>
+        </section>
+
+        <!-- ================= STEP 4 ================= -->
+        <section class="lesson" id="step-4">
+            <h2>Step 4: Make it blink with JavaScript</h2>
+            <p>
+                Blinking means: switch the light on, wait, switch it off, wait, and repeat
+                forever. Open <code>script.js</code> and write:
+            </p>
+<pre><code>// How long the light stays on, and then off, in milliseconds.
+// Try changing this number! Please keep it at 200 or more:
+// very fast red flashing can be unsafe for some people.
+const blinkDelay = 500;
+
+// Find the light on the page
+const light = document.getElementById("light");
+
+// If the light is on, turn it off. If it is off, turn it on.
+function toggleLight() {
+    light.classList.toggle("on");
+}
+
+// Run toggleLight again and again, waiting blinkDelay milliseconds each time
+setInterval(toggleLight, blinkDelay);</code></pre>
+            <p>Line by line:</p>
+            <ol>
+                <li>
+                    <code>const blinkDelay = 500;</code> creates a constant: a named value that
+                    does not change. 500 milliseconds is half a second.
+                </li>
+                <li>
+                    <code>document.getElementById("light")</code> finds the element with
+                    <code>id="light"</code> and stores it in <code>light</code>.
+                </li>
+                <li>
+                    <code>light.classList.toggle("on")</code> adds the class <code>on</code> if it
+                    is missing, and removes it if it is there. That is exactly a light switch.
+                </li>
+                <li>
+                    <code>setInterval(toggleLight, blinkDelay)</code> tells the browser to run
+                    <code>toggleLight</code> every 500 milliseconds, forever.
+                </li>
+            </ol>
+
+            <h3 id="timers">How timers work</h3>
+            <p>
+                Normally JavaScript runs your code from top to bottom, once, as fast as it can.
+                A <em>timer</em> lets you say "run this later" instead. JavaScript has two of them:
+            </p>
+<pre><code>// setTimeout: run the function ONCE, after the delay
+setTimeout(toggleLight, 2000); // switches the light on after 2 seconds, and that's it
+
+// setInterval: run the function AGAIN AND AGAIN, waiting the delay each time
+setInterval(toggleLight, 500); // switches the light every half second, forever</code></pre>
+            <p>
+                Both take the same two things: the function to run, and how long to wait in
+                <strong>milliseconds</strong> (1000 milliseconds = 1 second).
+                With <code>setInterval(toggleLight, 500)</code> this is what happens:
+            </p>
+<pre><code>time:   0ms     500ms    1000ms   1500ms   2000ms ...
+light:  off  →  ON    →  off   →  ON    →  off    ...</code></pre>
+            <p>
+                Notice that we write <code>toggleLight</code> and <strong>not</strong>
+                <code>toggleLight()</code>. With the brackets, the function would run immediately,
+                one time, and we would give the timer its result. Without brackets we hand the
+                function itself to the timer, and the timer decides when to call it.
+            </p>
+            <p>
+                The timer also doesn't stop the rest of your code: after <code>setInterval</code>
+                the browser carries on, and comes back to run <code>toggleLight</code> every time
+                the delay is over.
+            </p>
+            <p>
+                And how do we stop it? <code>setInterval</code> gives back a number that identifies
+                the timer. Save it in a constant, and pass it to <code>clearInterval</code> when
+                you want the blinking to stop:
+            </p>
+<pre><code>const alarmTimer = setInterval(toggleLight, blinkDelay);
+
+// later, when we want to stop it:
+clearInterval(alarmTimer);</code></pre>
+            <p>
+                We don't need to stop it today, but keep this in mind: MARIA still wants that alarm off!
+            </p>
+
+            <p>Save, refresh, and your alarm light is blinking. Well done, Commander!</p>
+        </section>
+
+        <!-- ================= TRY IT ================= -->
+        <section class="lesson" id="try-it">
+            <h2>Try it yourself</h2>
+            <ul>
+                <li>Change <code>blinkDelay</code> to <code>1000</code>. What happens? And with <code>250</code>?</li>
+                <li>Change <code>--light-on</code> to a different colour, for example <code>#ffb52e</code> for amber.</li>
+                <li>Add a fourth line to the status screen, like <code>OXYGEN: 98%</code>.</li>
+            </ul>
+            <p class="note">
+                Please keep <code>blinkDelay</code> at 200 or more: very fast red flashing can be
+                unsafe for some people.
+            </p>
+        </section>
+
+        <!-- ================= FULL CODE ================= -->
+        <section class="lesson" id="full-code">
+            <h2>The full code</h2>
+            <div class="resources-box">
+                <p>
+                    Stuck, or want to compare your work with ours? You can find the full code of
+                    today's class, all three files, on the
+                    <a href="resources.html#lesson01">Resources page</a>.
+                </p>
+                <p>
+                    Try to finish it by yourself first: you learn much more by fixing your own
+                    code than by copying ours.
+                </p>
+            </div>
+        </section>
+
+        <!-- ================= LEARNING METHOD ================= -->
+        <section class="lesson" id="learning-method">
+            <h2>Learning Method (Optional)</h2>
+            <p>
+                Today you learned a lot of new things, and in a week most of them will be gone.
+                That's normal: everyone forgets. Coming back to the next session and not
+                remembering what we did is one of the most common problems, and it makes every
+                new lesson harder than it needs to be.
+            </p>
+            <p>
+                The best fix is simple: <strong>take notes</strong>. Writing things down in your
+                own words helps you remember them, and gives you something to read back before the
+                next session. We suggest keeping three kinds of notes.
+            </p>
+
+            <h3 id="notes-session">1. What we did today</h3>
+            <p>
+                A short summary of the session, written at the end of it. A few lines are enough:
+                what you built, and the new ideas you met. Read it again before the next session,
+                and you will start already warmed up.
+            </p>
+<pre><code>Day 1: Emergency light
+- Built a page with 3 files: index.html, style.css, script.js
+- How to create an empty HTML page (the boilerplate):
+  saved an example in boilerplate.html to copy next time
+- CSS variables: define in :root, use with var(--name)
+- setInterval runs a function again and again</code></pre>
+            <p>
+                Tip: don't copy long code into your notes. Instead, save a small example file, like
+                a <code>boilerplate.html</code> with just the empty page, and write in your notes
+                where to find it.
+            </p>
+
+            <h3 id="notes-cheatsheet">2. Your cheatsheet</h3>
+            <p>
+                A list of useful things you will need again and again: tags, CSS properties,
+                JavaScript functions. Keep it in one place and add to it every session. Over time
+                it becomes your personal manual, and you won't need to search for the same thing twice.
+            </p>
+<pre><code>CSS
+:root { }                    → the &lt;html&gt; tag, the top of the page:
+                               variables defined here work everywhere
+--metal: #39425f;            → creates a variable (inside :root)
+color: var(--metal);         → uses the variable
+* { box-sizing: border-box; } → width includes padding and border,
+                               so a 340px box is really 340px
+border-radius: 50%;          → turns a square into a circle
+linear-gradient(red, blue)   → colour fading in a straight line
+radial-gradient(white, black) → colour fading from the centre outwards
+                               (both go in background-image)
+box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+                             → right, down, blur, colour
+                               (generator: html-css-js.com/css/generator/box-shadow)
+
+JavaScript
+document.getElementById("x") → finds the element with id="x"
+element.classList.toggle("on") → adds the class if missing, removes it if there
+setTimeout(myFunction, 2000) → runs myFunction ONCE, after 2 seconds
+setInterval(myFunction, 500) → runs myFunction every 0.5 seconds, forever
+clearInterval(timer)         → stops a timer saved with
+                               const timer = setInterval(...)</code></pre>
+
+            <h3 id="notes-mistakes">3. Your mistakes</h3>
+            <p>
+                Every time something doesn't work, write down what went wrong and how you fixed it.
+                Mistakes are the best teachers, but only if you remember them! Next time you see
+                the same problem, you will recognise it straight away.
+            </p>
+<pre><code>Problem: the light didn't blink
+Why:     I wrote setInterval(toggleLight(), 500), with the brackets
+Fix:     setInterval(toggleLight, 500): pass the function, don't call it</code></pre>
+
+            <p class="note">
+                Paper, a notebook app or a text file in your project folder all work. The best
+                place for your notes is the one you will actually open again.
+            </p>
+        </section>
+
+        <!-- Link to the next lesson, on the right.
+             Hidden until guide2.html exists: remove these comment marks to show it.
+        <nav class="page-nav" aria-label="Lessons">
+            <a class="button" href="guide2.html">Next day &rarr;</a>
+        </nav>
+        -->
+    </main>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>30 Days Lost in Space web challenge</p>
+        </div>
+    </footer>
+</body>
+</html>
