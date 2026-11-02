@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>20 - Javascript</title>
+  </head>
+  <body>
+    <h1>JavaScript basics</h1>
+    <a href="homepage.html">Back to home page</a>
+    <h3>Variables and conditions</h3>
+
+    <div id="output"></div>
+    <script>
+      // This code mirrors console messages to the HTML page
+      const output = document.getElementById('output');
+      const originalLog = console.log;
+
+      console.log = function (...args) {
+        originalLog.apply(console, args);
+        output.innerHTML += `<pre>${args.join(" ")}</pre>`;
+      };
+    </script>
+    <script src="page_20.js" defer></script>
+  </body>
+</html>
